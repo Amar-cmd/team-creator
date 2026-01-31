@@ -51,8 +51,8 @@
 .pill {
   width: 100%;
   border: none;
-  background: var(--primary);
-  color: #fff;
+  border: 2px solid var(--primary);
+  color: var(--primary);
   border-radius: 12px;
   padding: 12px 16px;
   font-weight: 800;
