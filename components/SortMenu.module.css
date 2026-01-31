@@ -1,0 +1,112 @@
+.root {
+  position: relative;
+  display: inline-flex;
+}
+
+.trigger {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  border-radius: 12px;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--fg);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.trigger:hover {
+  background: rgba(15, 23, 42, 0.04);
+}
+
+.chev {
+  color: var(--muted);
+}
+
+.menu {
+  position: absolute;
+  top: 44px;
+  right: 0;
+  width: min(260px, calc(100vw - 28px));
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 12px;
+  z-index: 50;
+}
+
+@media (max-width: 700px) {
+  .root {
+    width: 100%;
+  }
+
+  .trigger {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .menu {
+    left: 0;
+    right: 0;
+    width: auto;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.smallLabel {
+  font-size: 0.86rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.select,
+.input {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 9px 10px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 10px 0;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.option,
+.optionActive {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  text-align: left;
+  padding: 10px 10px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.option:hover {
+  background: rgba(15, 23, 42, 0.05);
+}
+
+.optionActive {
+  background: rgba(43, 124, 255, 0.14);
+  color: #0b3ea6;
+  font-weight: 700;
+}
+
+.hint {
+  font-size: 0.82rem;
+  color: var(--muted);
+}

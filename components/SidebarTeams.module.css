@@ -1,0 +1,141 @@
+/* MOBILE-FIRST: collapsible sidebar card */
+.sidebar {
+  width: calc(100% - 28px);
+  margin: 10px 0;
+  padding: 14px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-x: hidden;
+  border-radius: 10px;
+}
+
+.mobileHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.sectionTitle {
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+}
+
+.menuToggle {
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 12px;
+  padding: 8px 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--fg);
+}
+
+.menuToggle:hover {
+  background: rgba(15, 23, 42, 0.04);
+}
+
+.menuIcon {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.menuIcon span {
+  width: 18px;
+  height: 2px;
+  background: var(--fg);
+  display: block;
+  border-radius: 999px;
+}
+
+.menuLabel {
+  font-size: 0.9rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 60vh;
+  padding-bottom: 2px;
+}
+
+.closed .list {
+  display: none;
+}
+
+.item,
+.itemActive {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 12px;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  color: var(--fg);
+}
+
+.item:hover {
+  background: rgba(15, 23, 42, 0.04);
+}
+
+.itemActive {
+  background: rgba(43, 124, 255, 0.14);
+  color: #0b3ea6;
+  font-weight: 800;
+}
+
+.count {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.emptyText {
+  color: var(--muted);
+  padding: 12px 10px;
+  text-align: center;
+}
+
+/* DESKTOP: fixed sidebar with full list visible */
+@media (min-width: 981px) {
+  .sidebar {
+    width: 270px;
+    min-height: calc(100vh - 40px);
+    margin: 20px;
+    padding: 18px;
+    overflow-y: auto;
+  }
+
+  .mobileHeader {
+    justify-content: flex-start;
+  }
+
+  .menuToggle {
+    display: none;
+  }
+
+  .list {
+    display: flex;
+    max-height: none;
+  }
+
+  .closed .list {
+    display: flex;
+  }
+}

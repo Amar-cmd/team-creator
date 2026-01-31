@@ -1,0 +1,43 @@
+.wrapper {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: auto;
+  background: var(--card);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.table th,
+.table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table thead th {
+  position: sticky;
+  top: 0;
+  background: var(--panel);
+  z-index: 1;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.cbCol {
+  width: 44px;
+}
+
+.selected {
+  background: rgba(43, 124, 255, 0.10);
+}
+
+.empty {
+  padding: 22px;
+  text-align: center;
+  color: var(--muted);
+}

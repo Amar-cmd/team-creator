@@ -1,26 +1,45 @@
-@import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+
+  /* Neutral, app-like palette similar to the reference UI */
+  --bg: #ffffff;
+  --panel: #f7f8fa;
+  --card: #ffffff;
+  --fg: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+
+  --primary: #1e78ff;
+  --primary-hover: #1563d8;
+  --danger: #dc2626;
+  --danger-hover: #b91c1c;
+
+  --focus: rgba(30, 120, 255, 0.25);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+    Apple Color Emoji, Segoe UI Emoji;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button:focus,
+input:focus,
+select:focus {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
 }

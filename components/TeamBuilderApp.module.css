@@ -1,0 +1,343 @@
+/* MOBILE-FIRST: stack layout */
+.shell {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.main {
+  flex: 1;
+  padding: 10px 14px 30px;
+}
+
+.page {
+  width: 100%;
+  max-width: 1220px;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.headerRow {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.h2 {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Mobile-first: dropdowns become full width */
+.pillsRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  width: 100%;
+}
+
+.pill {
+  width: 100%;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.pill option {
+  color: #111827;
+}
+
+.uploadCard {
+  background: transparent;
+}
+
+.footerRow {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.helperText {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.error {
+  border: 1px solid rgba(220, 38, 38, 0.35);
+  background: rgba(220, 38, 38, 0.08);
+  color: var(--danger);
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  font-weight: 800;
+}
+
+.primaryBtn {
+  border: none;
+  border-radius: 14px;
+  padding: 12px 18px;
+  background: var(--primary);
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+  width: 100%;
+}
+
+.primaryBtn:hover {
+  background: var(--primary-hover);
+}
+
+.primaryBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.ghostBtn {
+  border: 1px solid var(--border);
+  background: transparent;
+  border-radius: 14px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 800;
+  color: var(--fg);
+}
+
+.ghostBtn:hover {
+  background: rgba(15, 23, 42, 0.04);
+}
+
+.ghostBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Teams view */
+.topBar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.topLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.topTitle {
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.topMeta {
+  font-size: 1.05rem;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.topRight {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.tableCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tableHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.tableTitle {
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+.tableSub {
+  color: var(--muted);
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.bottomActions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+  padding-top: 6px;
+}
+
+.selectedInfo {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.actionsRight {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.teamSelect {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 11px 12px;
+  background: var(--panel);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.dangerBtn {
+  border: none;
+  border-radius: 14px;
+  padding: 12px 16px;
+  background: var(--danger);
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+  width: 100%;
+}
+
+.dangerBtn:hover {
+  background: var(--danger-hover);
+}
+
+.dangerBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* TABLE: allow horizontal scroll naturally (already in StudentTable wrapper) */
+@media (max-width: 520px) {
+  .tableCard {
+    padding: 10px;
+  }
+
+  .topRight {
+    grid-template-columns: 1fr;
+  }
+
+  .topRight .ghostBtn {
+    width: 100%;
+  }
+}
+
+/* DESKTOP enhancements */
+@media (min-width: 981px) {
+  .shell {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .main {
+    padding: 20px 20px 40px;
+  }
+
+  .page {
+    margin: 20px auto;
+    gap: 16px;
+  }
+
+  .headerRow {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .h1,
+  .topTitle {
+    font-size: 3.1rem;
+  }
+
+  .h2,
+  .topMeta {
+    font-size: 1.4rem;
+  }
+
+  .pillsRow {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .pill {
+    width: auto;
+    min-width: 180px;
+  }
+
+  .footerRow {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .primaryBtn {
+    width: auto;
+  }
+
+  .topBar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .topRight {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .tableHeader {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .bottomActions {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .actionsRight {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .dangerBtn {
+    width: auto;
+  }
+}
