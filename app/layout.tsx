@@ -27,7 +27,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="app-shell">
+          <main className="app-main">{children}</main>
+          <footer className="app-footer">
+            © {new Date().getFullYear()} GroupeD - by Amar Jyoti. All rights reserved.
+          </footer>
+        </div>
       </body>
     </html>
   );
